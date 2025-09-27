@@ -13,9 +13,10 @@ if uploaded_file is not None:
     with open("examples/temp.wav", "wb") as f:
         f.write(uploaded_file.getbuffer())
     
-    st.audio("examples/temp.wav", format="audio/wav")
+    st.audio("temp.wav", format="audio/wav")
     st.write("Processing...")
 
     # Call function and display result
-    result = speech_to_text("examples/temp.wav")
+    result = speech_to_text("temp.wav")
     st.success(result)   # Green box output
+
